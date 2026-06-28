@@ -84,7 +84,7 @@ export default function ImageCarousel({ images, alt, className = "", objectFit =
             type="button"
             onClick={() => manualGoTo(prev)}
             aria-label="Previous image"
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/55 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/55 text-white flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
           >
             <LuChevronLeft size={16} />
           </button>
@@ -92,7 +92,7 @@ export default function ImageCarousel({ images, alt, className = "", objectFit =
             type="button"
             onClick={() => manualGoTo(next)}
             aria-label="Next image"
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/55 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/55 text-white flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
           >
             <LuChevronRight size={16} />
           </button>
@@ -101,7 +101,7 @@ export default function ImageCarousel({ images, alt, className = "", objectFit =
             type="button"
             onClick={() => setAutoPlay((p) => !p)}
             aria-label={autoPlay ? "Pause slideshow" : "Play slideshow"}
-            className="absolute top-2 right-2 w-7 h-7 rounded-full bg-black/55 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute top-2 right-2 w-7 h-7 rounded-full bg-black/55 text-white flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
           >
             {autoPlay ? <LuPause size={12} /> : <LuPlay size={12} />}
           </button>

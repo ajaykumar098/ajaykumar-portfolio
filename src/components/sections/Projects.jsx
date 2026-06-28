@@ -47,14 +47,14 @@ function ProjectCard({ project, index }) {
   }, [reducedMotion]);
 
   return (
-    <article ref={cardRef} className="flex flex-row items-center gap-8 px-4 rounded-2xl panel w-full" style={{ height: '85vh' }}>
+    <article ref={cardRef} className="flex flex-col lg:flex-row items-center gap-4 lg:gap-8 px-4 py-6 lg:py-0 rounded-2xl panel w-full h-auto lg:h-[85vh]">
       {/* Image - 65% */}
-      <div style={{ width: '65%', height: '90%' }}>
+      <div className="w-full lg:w-[65%] h-[40vh] lg:h-[90%]">
         <ImageCarousel images={project.images} alt={project.title} className="rounded-xl h-full" objectFit="contain" />
       </div>
 
       {/* Content - 35% */}
-      <div style={{ width: '35%', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '12px', padding: '8px 0' }}>
+      <div className="w-full lg:w-[35%] flex flex-col justify-center gap-3 px-2 lg:px-0 pb-4 lg:pb-0">
         <span className="text-[10px] font-mono text-accent dark:text-accent-light uppercase tracking-widest">
           Project {String(index + 1).padStart(2, "0")}
         </span>
@@ -97,9 +97,9 @@ export default function Projects() {
         <PlayButton narration={narrations.projects} />
       </div>
 
-      <div className="space-y-0">
+      <div className="space-y-4 lg:space-y-0">
         {portfolioData.projects.map((project, i) => (
-          <div key={project.id} className="h-screen flex items-center justify-center overflow-hidden px-2">
+          <div key={project.id} className="py-6 lg:h-screen lg:flex lg:items-center lg:justify-center lg:overflow-hidden px-2">
             <ProjectCard project={project} index={i} />
           </div>
         ))}
