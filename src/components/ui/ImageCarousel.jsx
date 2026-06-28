@@ -69,6 +69,7 @@ export default function ImageCarousel({ images, alt, className = "", objectFit =
           src={asset(images[index])}
           alt={`${alt} - image ${index + 1}`}
           loading="lazy"
+          decoding="async"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

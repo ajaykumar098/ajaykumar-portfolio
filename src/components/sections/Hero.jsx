@@ -126,7 +126,8 @@ export default function Hero() {
               src={asset("Profile - 1.jpeg")}
               alt={`${portfolioData.name} profile photo`}
               className="relative w-full h-full min-h-[300px] md:min-h-[400px] lg:min-h-[500px] object-cover object-top rounded-2xl panel-stroke shadow-xl"
-              loading="lazy"
+              loading="eager"
+              decoding="async"
             />
           </div>
         </motion.div>

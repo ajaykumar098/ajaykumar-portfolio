@@ -65,6 +65,8 @@ export default function Certificates() {
                 alt={currentItem.title}
                 className="w-full h-full object-contain rounded-xl"
                 style={{ maxHeight: '70vh' }}
+                loading="lazy"
+                decoding="async"
               />
               <button
                 type="button"
