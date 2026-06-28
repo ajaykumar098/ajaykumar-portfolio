@@ -42,7 +42,7 @@ export default function Hero() {
   }, [tagIdx]);
 
   return (
-    <section id="home" className="section-shell min-h-screen flex items-center justify-center">
+    <section id="home" className="section-shell min-h-screen flex items-center justify-center px-4 md:px-6">
       <div className="flex justify-end mb-2 md:absolute md:top-24 md:right-8 md:mb-0 z-10">
         <PlayButton narration={narrations.home} />
       </div>
@@ -64,10 +64,10 @@ export default function Hero() {
         </>
       )}
 
-      <div className="flex flex-col lg:flex-row items-center w-full max-w-7xl mx-auto gap-6 lg:gap-10">
+      <div className="flex flex-col lg:flex-row items-center w-full max-w-7xl mx-auto gap-8 lg:gap-10 py-4 lg:py-0">
         {/* Left: Content — 55% */}
         <motion.div
-          className="w-full lg:w-[55%] flex flex-col justify-center gap-4 md:gap-6"
+          className="w-full lg:w-[55%] flex flex-col justify-center gap-4 md:gap-6 order-2 lg:order-1"
           initial={{ opacity: 0, y: 30 }}
           animate={curtainDone || reducedMotion ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: reducedMotion ? 0 : 0.5 }}
@@ -115,7 +115,7 @@ export default function Hero() {
 
         {/* Right: Profile photo — 45%, pushed to far right */}
         <motion.div
-          className="w-full lg:w-[45%] lg:ml-auto flex items-center justify-center lg:justify-end min-h-[300px] md:min-h-[400px] lg:min-h-[500px]"
+          className="w-full lg:w-[45%] lg:ml-auto flex items-center justify-center lg:justify-end min-h-[250px] sm:min-h-[300px] md:min-h-[400px] lg:min-h-[500px] order-1 lg:order-2"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={curtainDone || reducedMotion ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.7, delay: reducedMotion ? 0 : 0.7 }}
@@ -126,7 +126,7 @@ export default function Hero() {
               src={asset("Profile - 1.jpeg")}
               alt={`${portfolioData.name} profile photo`}
               className="relative w-full h-full min-h-[300px] md:min-h-[400px] lg:min-h-[500px] object-cover object-top rounded-2xl panel-stroke shadow-xl"
-              loading="eager"
+              loading="lazy"
             />
           </div>
         </motion.div>

@@ -17,11 +17,11 @@ export default function Achievements() {
       PlayButton={PlayButton}
       renderContent={(ach) => (
         <div className="w-full">
-          <div className="grid lg:grid-cols-[65%_35%] gap-0">
-            <div className="aspect-video w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-[65%_35%] gap-0">
+            <div className="aspect-video w-full lg:aspect-auto lg:h-full">
               <ImageCarousel images={ach.images} alt={ach.title} className="rounded-none h-full" />
             </div>
-            <div className="p-6 flex flex-col justify-center panel-stroke border-l border-t border-b border-r-0 lg:border-l-0 lg:border-r">
+            <div className="p-4 md:p-6 flex flex-col justify-center panel-stroke border-l border-t border-b border-r-0 lg:border-l-0 lg:border-r">
               <h3 className="font-display text-xl md:text-2xl font-semibold mb-2">{ach.title}</h3>
               <p className="text-base opacity-80 mb-1 text-justify hyphens-auto">{ach.issuer}</p>
               <p className="text-sm opacity-70 leading-relaxed mb-3 text-justify hyphens-auto">{ach.description}</p>
