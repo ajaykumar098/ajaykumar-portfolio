@@ -21,11 +21,11 @@ export default function Education() {
         <PlayButton narration={narrations.education} />
       </div>
 
-      <div className="space-y-0">
+      <div className="space-y-6 lg:space-y-0">
         {items.map((edu, index) => (
-          <div key={edu.id} className="h-screen flex items-center justify-center overflow-hidden">
-            <article className="grid lg:grid-cols-[60%_40%] gap-6 p-6 md:p-8 rounded-2xl panel h-[85vh]">
-              <div className="h-[75vh] w-full">
+          <div key={edu.id} className="py-6 flex items-center justify-center">
+            <article className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-6 p-4 md:p-6 lg:p-8 rounded-2xl panel h-auto lg:h-[85vh]">
+              <div className="h-[40vh] lg:h-[75vh] w-full">
                 <ImageCarousel images={edu.images} alt={edu.institution} className="rounded-none h-full" />
               </div>
               <div className="flex flex-col justify-center">
