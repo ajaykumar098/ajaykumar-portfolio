@@ -20,7 +20,7 @@ export default function PlayButton({ narration, className, label = "Play section
       onClick={handleClick}
       aria-label={isSpeaking ? "Stop narration" : label}
       className={cn(
-        "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium panel-stroke transition-colors",
+        "hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium panel-stroke transition-colors",
         isSpeaking ? "bg-accent/15 text-accent dark:text-accent-light" : "hover:bg-accent/10",
         className
       )}
