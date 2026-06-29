@@ -33,6 +33,10 @@ const PREFERRED_VOICE_NAMES = [
   "Alex",
   "Google US English Male",
   "Google UK English Male",
+  "Google US English",
+  "en-US-Standard-B",
+  "en-US-Standard-D",
+  "com.apple.voice.compact.en-US.Samantha",
   "Samantha",
   "Fred",
   "Junior",
@@ -49,7 +53,7 @@ function pickMaleVoice(voices) {
   }
 
   const male = voices.find(
-    (v) => /male|david|guy|mark|daniel|alex/i.test(v.name) && /^en/i.test(v.lang)
+    (v) => /male|david|guy|mark|daniel|alex|james|john|tom/i.test(v.name) && /^en/i.test(v.lang)
   );
   if (male) return male;
 
@@ -89,8 +93,8 @@ export function useSpeech() {
     if (!synthRef.current || !text) return;
     synthRef.current.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = 0.95;
-    utterance.pitch = 0.8;
+    utterance.rate = 0.85;
+    utterance.pitch = 0.6;
     if (voiceRef.current) {
       utterance.voice = voiceRef.current;
     }
