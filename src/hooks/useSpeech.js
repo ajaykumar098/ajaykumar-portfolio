@@ -23,7 +23,7 @@ export function useActiveSection(sectionIds, offset = 120) {
 }
 
 // Preference order for a male voice.
-// We try these by name first (common on Chrome/Edge/Safari), then fall back
+// We try these by name first (common on Chrome/Edge/Safari/iOS/Android), then fall back
 // to any voice flagged "Male", then any en-US/en-GB voice.
 const PREFERRED_VOICE_NAMES = [
   "Microsoft David",
@@ -31,6 +31,13 @@ const PREFERRED_VOICE_NAMES = [
   "Microsoft Mark Online (Natural) - English (United States)",
   "Daniel",
   "Alex",
+  "Google US English Male",
+  "Google UK English Male",
+  "Samantha",
+  "Fred",
+  "Junior",
+  "Ralph",
+  "Thomas",
 ];
 
 function pickMaleVoice(voices) {
@@ -83,7 +90,7 @@ export function useSpeech() {
     synthRef.current.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = 0.95;
-    utterance.pitch = 0.9;
+    utterance.pitch = 0.8;
     if (voiceRef.current) {
       utterance.voice = voiceRef.current;
     }
