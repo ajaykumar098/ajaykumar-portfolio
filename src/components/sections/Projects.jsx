@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { LuGithub, LuFileText } from "react-icons/lu";
+import { LuGithub, LuFileText, LuExternalLink } from "react-icons/lu";
 import portfolioData from "../../data/portfolioData";
 import { narrations } from "../../data/narrations";
 import PlayButton from "../ui/PlayButton";
@@ -75,6 +75,11 @@ function ProjectCard({ project, index }) {
           <a href={project.github} className="btn-outline text-xs py-1.5 px-3" target="_blank" rel="noopener noreferrer">
             <LuGithub size={12} /> GitHub
           </a>
+          {project.live && (
+            <a href={project.live} className="btn-outline text-xs py-1.5 px-3" target="_blank" rel="noopener noreferrer">
+              <LuExternalLink size={12} /> Live Demo
+            </a>
+          )}
           {project.pdf && (
             <a href={asset(project.pdf)} className="btn-outline text-xs py-1.5 px-3" target="_blank" rel="noopener noreferrer">
               <LuFileText size={12} /> View PDF
